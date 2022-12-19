@@ -105,7 +105,7 @@ int main(int argc, char** argv)
         // std::cout << "Center pixel color: (" << r << ", " << g << ", " << b << ")" << std::endl;
 
         // checks pixel to the left of center pixel
-        if (BitBlt(hdcBuffer, 0, 0, 1, 1, hdcScreen, screenWidth - offset, screenHeight + 5, SRCCOPY) == 0)
+        if (BitBlt(hdcBuffer, 0, 0, 1, 1, hdcScreen, screenWidth - offset, screenHeight + screenWidth / 192, SRCCOPY) == 0)
             {
                 std::cout << "Failed to copy pixels from the screen" << std::endl;
                 return -1;
@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 
         
         // checks pixel to the right of center pixel
-        if (BitBlt(hdcBuffer, 0, 0, 1, 1, hdcScreen, screenWidth + offset, screenHeight + 5, SRCCOPY) == 0)
+        if (BitBlt(hdcBuffer, 0, 0, 1, 1, hdcScreen, screenWidth + offset, screenHeight + screenWidth / 192, SRCCOPY) == 0)
             {
                 std::cout << "Failed to copy pixels from the screen" << std::endl;
                 return -1;
@@ -150,7 +150,7 @@ int main(int argc, char** argv)
         }
 
         // checks pixel below center pixel
-        if (BitBlt(hdcBuffer, 0, 0, 1, 1, hdcScreen, screenWidth + 5, screenHeight + offset, SRCCOPY) == 0)
+        if (BitBlt(hdcBuffer, 0, 0, 1, 1, hdcScreen, screenWidth + screenWidth / 192, screenHeight + offset, SRCCOPY) == 0)
             {
                 std::cout << "Failed to copy pixels from the screen" << std::endl;
                 return -1;
