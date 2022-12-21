@@ -87,7 +87,7 @@ int main(int argc, char** argv)
 
 
 
-        // calculates the euclidean distance between the current pixel color and (255, 255, 255)
+        // calculates the euclidean distance between the current pixel color and the target color
         double distance = sqrt(pow(r - red, 2) + pow(g - green, 2) + pow(b - blue, 2));
 
         // checks if the distance is less than or equal to the threshold
